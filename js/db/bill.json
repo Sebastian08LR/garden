@@ -9,6 +9,30 @@
                     "quantity": 2,
                     "price": 100,
                     "total": 200 
+                },
+                {
+                    "descript": "Incluye versión desktop y mobile",
+                    "quantity": 2,
+                    "price": 100,
+                    "total": 200 
+                },
+                {
+                    "descript": "papa",
+                    "quantity": 2,
+                    "price": 100,
+                    "total": 200 
+                },
+                {
+                    "descript": "Incluye versión desktop y mobile",
+                    "quantity": 2,
+                    "price": 100,
+                    "total": 200 
+                },
+                {
+                    "descript": "Incluye versión desktop y mobile",
+                    "quantity": 2,
+                    "price": 100,
+                    "total": 200 
                 }
             ]
         }
