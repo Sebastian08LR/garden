@@ -26,3 +26,9 @@ export const getAllPossiblePaymentsMethods = async()=>{
     
     return dataUpdate;
 }
+
+export const getPaymentInfoByClientCode = async(code)=>{
+    let res = await fetch(`http://localhost:5505/payments?code_client=${code}`)
+    let dataClients = await res.json();
+    return dataClients;
+}

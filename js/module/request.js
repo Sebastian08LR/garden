@@ -110,12 +110,18 @@ export const getAllOrdersDeliveredAfterExpectedTime= async()=>{
         
         if(expectedMonth <= deliveryMonth && Number(deliveryDay) > Number(expectedDay)){
                 dataUpdate.push({
-                    Codigo_De_Pedido: request.code_request,
-                    Codigo_De_cliente: request.code_client,
-                    Fecha_Esperada: request.date_wait,
-                    Fecha_De_Entrega: request.date_delivery
+                    codigo_de_pedido: request.code_request,
+                    codigo_de_cliente: request.code_client,
+                    fecha_esperada: request.date_wait,
+                    fecha_de_entrega: request.date_delivery
                 });
         }
     })  
     return dataUpdate;
+}
+
+export const getRequestInfoByCode = async(code)=>{
+    let res = await fetch(`http://localhost:5508/requests?code_client=${code}`)
+    let dataClients = await res.json();
+    return dataClients;
 }
