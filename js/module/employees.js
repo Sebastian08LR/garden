@@ -1,5 +1,5 @@
 export const getAllEmployeesNamesLastnamesAndEmailsWhichBossCode7 = async()=>{
-    let res = await fetch("http://localhost:5502/employees?code_boss=7")
+    let res = await fetch("http://172.16.101.146:5392/employees?code_boss=7")
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(val => {
@@ -15,7 +15,7 @@ export const getAllEmployeesNamesLastnamesAndEmailsWhichBossCode7 = async()=>{
 }
 
 export const getAllBossNameLastnamesAndEmail = async()=>{
-    let res = await fetch("http://localhost:5502/employees?employee_code=1")
+    let res = await fetch("http://172.16.101.146:5392/employees?employee_code=1")
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(val => {
@@ -32,7 +32,7 @@ export const getAllBossNameLastnamesAndEmail = async()=>{
 }
 
 export const getAllEmployeesNamesLastnamesAndEmailsWhoAreNotSalesRepresentatives = async()=>{
-    let res = await fetch("http://localhost:5502/employees?position=Representante Ventas")
+    let res = await fetch("http://172.16.101.146:5392/employees?position=Representante Ventas")
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(val => {
@@ -46,13 +46,13 @@ export const getAllEmployeesNamesLastnamesAndEmailsWhoAreNotSalesRepresentatives
 }
 
 export const getEmployeeByCode = async(code)=>{
-    let res = await fetch(`http://localhost:5502/employees?employee_code=${code}`)
+    let res = await fetch(`http://172.16.101.146:5392/employees?employee_code=${code}`)
     let dataClients = await res.json();
     return dataClients;
 }
 
 export const getEmployeeNameAndBossName = async() =>{
-    let res = await fetch("http://localhost:5502/employees")
+    let res = await fetch("http://172.16.101.146:5392/employees")
     let employees = await res.json();
     let dataUpdate = [];   
     /* The forEach funtion do not work correctly if you use with it an async, 
@@ -71,7 +71,7 @@ export const getEmployeeNameAndBossName = async() =>{
 }
 
 export const getEmployeeNameAndBossesNames = async() =>{
-    let res = await fetch("http://localhost:5502/employees")
+    let res = await fetch("http://172.16.101.146:5392/employees")
     let employees = await res.json();
     let dataUpdate = [];   
     /* The forEach funtion do not work correctly if you use with it an async, 

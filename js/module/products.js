@@ -1,5 +1,5 @@
 export const getAllProductsFromOrnamentalsGamaWith100stockOrMore = async()=>{
-    let res = await fetch("http://localhost:5506/products")
+    let res = await fetch("http://172.16.101.146:5396/products")
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(product =>{
@@ -12,7 +12,7 @@ export const getAllProductsFromOrnamentalsGamaWith100stockOrMore = async()=>{
 }
 
 export const getProductInfoByCode = async(code)=>{
-    let res = await fetch(`http://localhost:5507/products?code_product=${code}`)
+    let res = await fetch(`http://172.16.101.146:5396/products?code_product=${code}`)
     let dataClients = await res.json();
     return dataClients;
 }

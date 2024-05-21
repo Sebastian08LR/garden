@@ -1,5 +1,5 @@
 export const getAllPossibleStatuForAPackage = async()=>{
-    let res = await fetch("http://localhost:5508/requests")
+    let res = await fetch("http://172.16.101.146:5398/requests")
     let data = await res.json();
     let uniqueStatus = new Set();
     data.forEach(val => {
@@ -16,7 +16,7 @@ export const getAllPossibleStatuForAPackage = async()=>{
 }
 
 export const getAllClientsPaymentsDate = async()=>{
-    let res = await fetch("http://localhost:5508/requests")
+    let res = await fetch("http://172.16.101.146:5398/requests")
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(request =>{
@@ -31,7 +31,7 @@ export const getAllClientsPaymentsDate = async()=>{
 
 
 export const getAllOrdersDeliveredBeforeExpectedTime= async()=>{
-    let res = await fetch("http://localhost:5508/requests")
+    let res = await fetch("http://172.16.101.146:5398/requests")
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(request =>{
@@ -61,7 +61,7 @@ export const getAllOrdersDeliveredBeforeExpectedTime= async()=>{
 }
 
 export const getAllOrdersDeniedIn2009 = async()=>{
-    let res = await fetch("http://localhost:5508/requests")
+    let res = await fetch("http://172.16.101.146:5398/requests")
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(request =>{
@@ -74,7 +74,7 @@ export const getAllOrdersDeniedIn2009 = async()=>{
 }
 
 export const getAllOrdersDeliveredInJanuary = async()=>{
-    let res = await fetch("http://localhost:5508/requests")
+    let res = await fetch("http://172.16.101.146:5398/requests")
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(request =>{
@@ -91,7 +91,7 @@ export const getAllOrdersDeliveredInJanuary = async()=>{
 }
 
 export const getAllOrdersDeliveredAfterExpectedTime= async()=>{
-    let res = await fetch("http://localhost:5508/requests")
+    let res = await fetch("http://172.16.101.146:5398/requests")
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(request =>{
@@ -121,7 +121,7 @@ export const getAllOrdersDeliveredAfterExpectedTime= async()=>{
 }
 
 export const getRequestInfoByCode = async(code)=>{
-    let res = await fetch(`http://localhost:5508/requests?code_client=${code}`)
+    let res = await fetch(`http://172.16.101.146:5398/requests?code_client=${code}`)
     let dataClients = await res.json();
     return dataClients;
 }

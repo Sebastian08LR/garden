@@ -5,14 +5,14 @@ import{
     getEmployeeByCode
 }from "./employees.js"
 export const getOfficeInfoByOfficeCode = async(code)=>{
-    let res = await fetch(`http://localhost:5504/offices?code_office=${code}`)
+    let res = await fetch(`http://172.16.101.146:5394/offices?code_office=${code}`)
     let dataClients = await res.json();
     return dataClients;
 }
 
 
 export const getAllOfficesWithCodeAndCity = async()=>{
-    let res = await fetch("http://localhost:5504/offices")
+    let res = await fetch("http://172.16.101.146:5394/offices")
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(val => {
@@ -25,7 +25,7 @@ export const getAllOfficesWithCodeAndCity = async()=>{
 }
 
 export const getAllOfficesFromSpainWithCityAndMobil = async()=>{
-    let res = await fetch("http://localhost:5504/offices?country=España")
+    let res = await fetch("http://172.16.101.146:5394/offices?country=España")
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(val => {
@@ -38,7 +38,7 @@ export const getAllOfficesFromSpainWithCityAndMobil = async()=>{
 }
 
 export const getDirectionOfficeWithClientsInFuenlabrada = async() =>{
-    let res = await fetch("http://localhost:5501/clients?city=Fuenlabrada")
+    let res = await fetch("http://172.16.101.146:5391/clients?city=Fuenlabrada")
     let clients = await res.json();
     let dataUpdate = [];   
     /* The forEach funtion do not work correctly if you use with it an async, 
@@ -56,4 +56,3 @@ export const getDirectionOfficeWithClientsInFuenlabrada = async() =>{
         }
         return dataUpdate;
     }
-

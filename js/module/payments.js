@@ -1,5 +1,5 @@
 export const getAllOrdersPaidIn2008WithPayPal = async()=>{
-    let res = await fetch("http://localhost:5505/payments")
+    let res = await fetch("http://172.16.101.146:5395/payments")
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(payment =>{
@@ -16,7 +16,7 @@ export const getAllOrdersPaidIn2008WithPayPal = async()=>{
 }
 
 export const getAllPossiblePaymentsMethods = async()=>{
-    let res = await fetch("http://localhost:5505/payments")
+    let res = await fetch("http://172.16.101.146:5395/payments")
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(payment =>{
@@ -28,7 +28,7 @@ export const getAllPossiblePaymentsMethods = async()=>{
 }
 
 export const getPaymentInfoByClientCode = async(code)=>{
-    let res = await fetch(`http://localhost:5505/payments?code_client=${code}`)
+    let res = await fetch(`http://172.16.101.146:5395/payments?code_client=${code}`)
     let dataClients = await res.json();
     return dataClients;
 }

@@ -18,17 +18,17 @@ import{
     getRequestDetailsByCode
 } from "./request_details.js"
 export const getClientByCode = async(code)=>{
-    let res = await fetch(`http://localhost:5501/clients?client_code=${code}`)
+    let res = await fetch(`http://172.16.101.146:5391/clients?client_code=${code}`)
     let dataClients = await res.json();
     return dataClients;
 }
 export const getClientByCity = async(code)=>{
-    let res = await fetch(`http://localhost:5501/clients?city=${code}`)
+    let res = await fetch(`http://172.16.101.146:5391/clients?city=${code}`)
     let dataClients = await res.json();
     return dataClients;
 }
 export const getAllClientsNamesThatAreFromSpain = async()=>{
-    let res = await fetch("http://localhost:5501/clients?country=Spain")
+    let res = await fetch("http://172.16.101.146:5391/clients?country=Spain")
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(val => {
@@ -41,7 +41,7 @@ export const getAllClientsNamesThatAreFromSpain = async()=>{
 }
 
 export const getAllClientsFromMadridWithSalesRepresentativeWith11Or30 = async()=>{
-    let res = await fetch("http://localhost:5501/clients?city=Madrid")
+    let res = await fetch("http://172.16.101.146:5391/clients?city=Madrid")
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(client => {
@@ -53,7 +53,7 @@ export const getAllClientsFromMadridWithSalesRepresentativeWith11Or30 = async()=
 }
 
 export const getClientNameAndInfoFromSalesManager = async() =>{
-    let res = await fetch("http://localhost:5501/clients")
+    let res = await fetch("http://172.16.101.146:5391/clients")
     let clients = await res.json();
     let dataUpdate = [];   
     /* The forEach funtion do not work correctly if you use with it an async, 
@@ -71,7 +71,7 @@ export const getClientNameAndInfoFromSalesManager = async() =>{
 }
 
 export const getAllClientsThatHaveMadePayments = async() =>{
-    let res = await fetch("http://localhost:5501/clients")
+    let res = await fetch("http://172.16.101.146:5391/clients")
     let clients = await res.json();
     let dataUpdate = [];   
     /* The forEach funtion do not work correctly if you use with it an async, 
@@ -93,7 +93,7 @@ export const getAllClientsThatHaveMadePayments = async() =>{
 }
 
 export const getAllClientsThatHaveNotMadePayments = async() =>{
-    let res = await fetch("http://localhost:5501/clients")
+    let res = await fetch("http://172.16.101.146:5391/clients")
     let clients = await res.json();
     let dataUpdate = [];   
     /* The forEach funtion do not work correctly if you use with it an async, 
@@ -116,7 +116,7 @@ export const getAllClientsThatHaveNotMadePayments = async() =>{
 }
 
 export const getAllClientsThatHaveMadePaymentsAndOfficeLocation = async() =>{
-    let res = await fetch("http://localhost:5501/clients")
+    let res = await fetch("http://172.16.101.146:5391/clients")
     let clients = await res.json();
     let dataUpdate = [];   
     /* The forEach funtion do not work correctly if you use with it an async, 
@@ -140,7 +140,7 @@ export const getAllClientsThatHaveMadePaymentsAndOfficeLocation = async() =>{
 }
 
 export const getAllClientsThatHaveNotMadePaymentsAndOfficeLocation = async() =>{
-    let res = await fetch("http://localhost:5501/clients")
+    let res = await fetch("http://172.16.101.146:5391/clients")
     let clients = await res.json();
     let dataUpdate = [];   
     /* The forEach funtion do not work correctly if you use with it an async, 
@@ -164,7 +164,7 @@ export const getAllClientsThatHaveNotMadePaymentsAndOfficeLocation = async() =>{
 }
 
 export const getClientsEmployeeAndCity = async() =>{
-    let res = await fetch("http://localhost:5501/clients");
+    let res = await fetch("http://172.16.101.146:5391/clients");
     let clients = await res.json();
     for (let i = 0; i < clients.length; i++) {
         let {
@@ -233,7 +233,7 @@ export const getClientsEmployeeAndCity = async() =>{
 }
 
 export const getAllClientsNamesWithOrdersDeliveredAfterExpectedTime= async()=>{
-    let res = await fetch(`http://localhost:5501/clients`)
+    let res = await fetch(`http://172.16.101.146:5391/clients`)
     let clients = await res.json();
     let dataUpdate = [];
     let request_data = await getAllOrdersDeliveredAfterExpectedTime();
@@ -255,7 +255,7 @@ export const getAllClientsNamesWithOrdersDeliveredAfterExpectedTime= async()=>{
 }
 
 export const getAllGammasPurchasedForClients = async () => {
-    let res = await fetch(`http://localhost:5501/clients`);
+    let res = await fetch(`http://172.16.101.146:5391/clients`);
     let clients = await res.json();
     let dataUpdate = [];
 
