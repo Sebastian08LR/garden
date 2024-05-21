@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "dev": " node ./js/main.js",
+    "close" : "fuser -k 5391/tcp & fuser -k 5392/tcp & fuser -k 5393/tcp & fuser -k 5394/tcp & fuser -k 5395/tcp & fuser -k 5396/tcp & fuser -k 5397/tcp & fuser -k 5398/tcp",
     "start-all": "npm run clients & npm run employees & npm run gama & npm run offices & npm run payments & npm run products & npm run request_details & npm run requests & npm run dev",
     "clients": "json-server js/db/clients.json -p 5391",
     "employees" : "json-server js/db/employees.json -p 5392",
